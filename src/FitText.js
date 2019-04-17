@@ -33,9 +33,10 @@ export default class FitText {
     // Collect/Sample widths
     for (let i = 0; i < 3; i++) {
       textElement.font.size += i * i;
+      const magicNumber = textElement.font.size / 24;
       samples.push({
         x: this.textMetrics.measureText(textElement),
-        y: textElement.font.size,
+        y: textElement.font.size - magicNumber,
       });
     }
 

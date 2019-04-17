@@ -3,12 +3,12 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    demo: './example/src/demo.js',
+    demo: './docs/src/demo.js',
     // FitText: './src/FitText.js',
   },
   cache: true,
   output: {
-    path: path.join(__dirname, './example/build/'),
+    path: path.join(__dirname, './docs/dist/'),
     // path: path.join(__dirname, './dist/'),
     filename: '[name].js',
     libraryTarget: 'umd',

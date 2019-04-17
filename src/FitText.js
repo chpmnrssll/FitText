@@ -18,15 +18,18 @@ export default class FitText {
    */
 
   /**
-   * Measures an instance of TextElement
-   * @function fit
+   * Creates and measures an instance of TextElement
+   * @function element
    * @param {Object} element - DOM element
    * @param {Number} compress - Amount to compress the parent element width
    * @param {Number} minFontSize - Minimum font size
    * @param {Number} maxFontSize - Maximum font size
    * @returns {Result} Predicted width results
    */
-  fit(element, compress = 1.0, minFontSize = 16, maxFontSize = 1024) {
+  element(element) {
+    const compress = element.getAttribute('compress') || 1.0;
+    const minFontSize = element.getAttribute('minFontSize') || 16;
+    const maxFontSize = element.getAttribute('maxFontSize') || 1024;
     const textElement = new TextElement(element, compress);
     const samples = [];
 
